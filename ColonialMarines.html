@@ -18,6 +18,10 @@
         padding-left: 2%;
         padding-right: 2%
     }
+
+    #divLeadershipPoints {
+        display: none;
+    }
 </style>
 
 <body>
@@ -82,9 +86,9 @@
                 <input type="text" class="form-control" id="personalItem" placeholder="Personal Item"
                     name="personalItem">
             </div>
-            <div class="col-sm-3">
-                <label for="defense">Defense Roll:</label>
-                <input type="text" class="form-control" id="defense" placeholder="defense roll" name="defense">
+            <div class="col-sm-3" id="divLeadershipPoints">
+                <label for="lp">Leadership Points:</label>
+                <input type="text" class="form-control" id="lp" placeholder="leadership points" name="lp">
             </div>
             <div class="col-sm-3">
                 <label for="stress">Stress:</label>
@@ -124,7 +128,7 @@
                             <td>VP-70 Pistol & Holster</td>
                             <td>4 Magazines</td>
                             <td>2</td>
-                            <td></td>
+                            <td>-1 atk</td>
                         </tr>
                         <tr>
                             <td>M24 Tactical Knife</td>
@@ -136,16 +140,20 @@
                             <td>ARMAT M41A Pulse Rifle</td>
                             <td>4 Magazines</td>
                             <td>2</td>
+                            <td></td>
                         </tr>
                         <tr>
-                            <td>PN 30MM GRENADE LAUNCHER</td>
+                            <td>PN 30MM Grenade Launcher</td>
                             <td>1 Magazine</td>
                             <td>4</td>
+                            <td></td>
+
                         </tr>
                         <tr>
-                            <td>GRENADES</td>
+                            <td>Grenades</td>
                             <td>8</td>
                             <td>8</td>
+                            <td>Kills creatures equal to attack roll</td>
                         </tr>
                     </tbody>
                 </table>
@@ -154,16 +162,19 @@
                         <tr>
                             <th>PROTECTION</th>
                             <th>USES</th>
+                            <th>NOTES</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>M3 Personal Armor</td>
                             <td>3</td>
+                            <td>+1 atk, 1 use per roll 1</td>
                         </tr>
                         <tr>
                             <td>M10 Ballistic Helmet</td>
                             <td>1</td>
+                            <td>absorbs 1 damage then broken</td>
                         </tr>
                     </tbody>
                 </table>
@@ -173,6 +184,7 @@
                             <th>KIT</th>
                             <th>USES/NOTES</th>
                             <th>LOCATION</th>
+                            <th>NOTES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -180,31 +192,37 @@
                             <td>Personal First Aid Kit</td>
                             <td>1</td>
                             <td>Webbing</td>
+                            <td>Allows corpsman to use</td>
                         </tr>
                         <tr>
                             <td>TNR Shoulder Lamp</td>
                             <td></td>
                             <td>Armor</td>
+                            <td>Allows seeing in dark</td>
                         </tr>
                         <tr>
                             <td>M94 Marking Flares</td>
                             <td>5</td>
                             <td>Pack</td>
+                            <td>counts as ligth for 1 marine for 1 turn</td>
                         </tr>
                         <tr>
                             <td>Rations</td>
                             <td>3</td>
                             <td>Pack</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Canteen</td>
                             <td>2</td>
                             <td>Pack</td>
+                            <td>Counts as a ration</td>
                         </tr>
                         <tr>
                             <td>Dust Goggles & Respirator</td>
                             <td></td>
                             <td>Webbing</td>
+                            <td>Filters air - protects against harsh chemicals/atmosphere</td>
                         </tr>
                     </tbody>
                 </table>
@@ -218,6 +236,7 @@
             $('#rank').change(function () {
                 makeChanges();
             });
+
             $('#class').change(function () {
                 makeChanges();
             });
@@ -226,37 +245,50 @@
         function makeChanges() {
             var rank = Number($('#rank').val());
             var classType = $('#class :selected').text();
-            $('#className').html(`The ${classType}`);
+            $('#className').html(`<strong><u>The ${classType}</u></strong>`);
 
             switch (classType) {
                 case 'Rifleman':
                     life = 5 + rank;
                     $('#classTraits').html('All Rifleman characters add their level to their attack rolls.They are proficient with all infantry weaponry.They may wear armor and helmets.<br/>' +
                         'HIT POINTS: 5(+ Character Level).At first level Rifleman characters have 6 HP.');
+                    $('#divLeadershipPoints').hide();
                     break;
                 case 'Smartgunner':
                     life = 7 + rank;
                     $('#classTraits').html('All Smartgunner characters add their level to their attack rolls. They are proficient with all infantry weaponry and M56A2 Smartguns.They may wear armor and helmets.' +
                         ' Once per session The Smartgunner may perform a <strong>Spray Attack</strong> using the Smartgun to spray an area and attack many enemies. When performing a Spray Attack roll three six' +
                         'sided dice(3d6), and may score hits with each.These hits can be focused on one or more creatures.<br/>HIT POINTS: 7 (+ Character Level)');
+                    $('#divLeadershipPoints').hide();
                     break;
                 case 'Com-Tech':
                     lif = 4 + rank;
                     $('#classTraits').html('All COM-TECH characters add half their level to their attack rolls. They are proficient with all infantry weaponry.They may wear armor and helmets.They are also' +
                         'proficient at <strong>operating electronics</strong>, radio communications, modifying electronics as well as  <strong>computer diagnostics</strong>, coding, and bypassing security systems.<br/>' +
                         'HIT POINTS: 4(+ Character Level).');
+                    $('#divLeadershipPoints').hide();
                     break;
                 case 'Corpsman':
                     life = 4 + rank;
                     $('#classTraits').html('All Corpsman characters add half their level to their attack rolls. They are proficient with all infantry weaponry.They may wear armor and helmets. The Corpsman is' +
-                        'also proficient at battlefield medicine and first aid.They may expend a use of a characters first aid kit in order for that character to recover HP equal to 1D6 + the Corpsman’s level.' +
+                        'also proficient at <strong>battlefield medicine</strong> and first aid.They may expend a use of a characters first aid kit in order for that character to recover HP equal to 1D6 + the Corpsman’s level.' +
                         'The Corpsman can do this twice per session at first level and + 1 times each level afterward. At fifth level the Corpsman may do this six times per session.<br/>HIT POINTS: 4(+ Character Level)');
+                    $('#divLeadershipPoints').hide();
                     break;
                 case 'Scout Sniper':
                     life = 5 + rank;
+                    $('#classTraits').html('All Scout Sniper characters add half their level to their attack rolls. They are proficient with all infantry weaponry.They may wear armor and helmets. Once per session' +
+                        'The Scout Sniper may make a <strong>Precise Shot</strong> which allows the player to roll three six side dice(3d6) and choose the result of one.<br/>HIT POINTS: 5(+ Character Level)');
+                    $('#divLeadershipPoints').hide();
                     break;
                 case 'Squad Leader':
                     life = 4 + rank;
+
+                    $('#classTraits').html('All Squad Leader characters add half their level to their attack rolls.They are proficient with all infantry weaponry.They may wear armor and helmets.Squad Leaders' +
+                        'also have a pool of <strong>Leadership Points</strong> equal to 1 + their level.The Squad Leader may expend one of these points to have any other squad member re - roll an attack roll, defense' +
+                        'roll, saving throw, searching roll, or roll to perform a skill(like the Corpsman’s <strong>Battlefield Medicine</strong> or the Com - Tech’s <strong>Computer Diagnostics</strong>.<br/>HIT POINTS: 4(+ Character Level)');
+                    $('#divLeadershipPoints').show();
+                    $('#lp').val(rank + 1);
                     break;
             }
 
