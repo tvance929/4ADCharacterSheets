@@ -248,7 +248,7 @@
                     $('#tblLoadoutArmament > tbody').html('<tr><td>VP - 70 Pistol & Holster</td><td>4 Magazines</td><td>2</td><td>-1 atk</td></tr ><tr><td>M24 Tactical Knife</td><td>-</td>' +
                         '<td>-</td><td></td></tr><tr><td>ARMAT M41A Pulse Rifle</td><td>4 Magazines</td><td>2</td><td></td></tr><tr><td>PN 30MM Grenade Launcher</td><td>1 Magazine</td><td>4</td><td></td>' +
                         '</tr><tr><td>Grenades</td><td>8</td><td>8</td><td>Kills creatures equal to attack roll</td></tr>');
-                    $('#tblLoadoutProtection > tbody').html('<tr><td> M3 Personal Armor</td><td>3</td><td>+1 atk, 1 use per roll 1</td></tr ><tr><td>M10 Ballistic Helmet</td><td>1</td><td>absorbs 1 damage then broken</td></tr>');
+                    $('#tblLoadoutProtection > tbody').html('<tr><td>M3 Personal Armor</td><td>3</td><td>+1 atk, 1 use per roll 1</td></tr ><tr><td>M10 Ballistic Helmet</td><td>1</td><td>absorbs 1 damage then broken</td></tr>');
                     break;
                 case 'Smartgunner':
                     life = 7 + rank;
@@ -258,8 +258,9 @@
                     $('#divSpecialAbility').show();
                     $('#lblSpecialAbility').text('Spray Attack')
                     $('#specialAbility').val(1);
-                    $('#tblLoadoutArmament > tbody').html('<tr><td>M4A3 Pistol</td><td>5 Magazines</td><td>1</td><td>???</td></tr><tr><td>M24 Tactical Knife</td><td>-</td>' +
-                        '<td>-</td><td></td></tr><tr><td>M56A2 Smartgun</td><td>1 Magazine</td><td>4</td><td></td></tr><tr><td>Grenades</td><td>8</td><td>8</td><td>Kills creatures equal to attack roll</td></tr>');
+                    $('#tblLoadoutArmament > tbody').html('<tr><td>M4A3 Pistol</td><td>5 Magazines</td><td>1</td><td></td></tr><tr><td>M24 Tactical Knife</td><td>-</td>' +
+                        '<td>-</td><td></td></tr><tr><td>M56A2 Smartgun</td><td>1 Magazine</td><td>4</td><td>+2 atk</td></tr><tr><td>Grenades</td><td>8</td><td>8</td><td>Kills creatures equal to attack roll</td></tr>');
+                    $('#tblLoadoutProtection > tbody').html('<tr><td>M2 Flak Vest</td><td>3</td><td>+1 def, 1 use per roll 1</td></tr ><tr><td>M56A2 Armored Breastplate</td><td>1</td><td>absorbs 1 damage then broken</td></tr>');
                     break;
                 case 'Com-Tech':
                     lif = 4 + rank;
@@ -270,6 +271,7 @@
                     $('#tblLoadoutArmament > tbody').html('<tr><td>VP - 70 Pistol & Holster</td><td>4 Magazines</td><td>2</td><td>-1 atk</td></tr ><tr><td>Gerber MK II Knife</td><td>-</td>' +
                         '<td>-</td><td></td></tr><tr><td>ARMAT M41A Pulse Rifle</td><td>4 Magazines</td><td>2</td><td></td></tr><tr><td>PN 30MM Grenade Launcher</td><td>1 Magazine</td><td>4</td><td></td>' +
                         '</tr><tr><td>Grenades</td><td>8</td><td>8</td><td>Kills creatures equal to attack roll</td></tr>');
+                    $('#tblLoadoutProtection > tbody').html('<tr><td>M3 Personal Armor</td><td>3</td><td>+1 def, 1 use per roll 1</td></tr ><tr><td>M10 Ballistic Helmet</td><td>1</td><td>absorbs 1 damage then broken</td></tr>');
                     break;
                 case 'Corpsman':
                     life = 4 + rank;
@@ -282,6 +284,7 @@
                     $('#tblLoadoutArmament > tbody').html('<tr><td>VP - 70 Pistol & Holster</td><td>4 Magazines</td><td>2</td><td>-1 atk</td></tr ><tr><td>M24 Tactical Knife</td><td>-</td>' +
                         '<td>-</td><td></td></tr><tr><td>ARMAT M41A Pulse Rifle</td><td>4 Magazines</td><td>2</td><td></td></tr><tr><td>PN 30MM Grenade Launcher</td><td>1 Magazine</td><td>4</td><td></td>' +
                         '</tr><tr><td>Grenades</td><td>8</td><td>8</td><td>Kills creatures equal to attack roll</td></tr>');
+                    $('#tblLoadoutProtection > tbody').html('<tr><td>M3 Personal Armor</td><td>3</td><td>+1 def, 1 use per roll 1</td></tr ><tr><td>M10 Ballistic Helmet</td><td>1</td><td>absorbs 1 damage then broken</td></tr>');
                     break;
                 case 'Scout Sniper':
                     life = 5 + rank;
