@@ -249,6 +249,10 @@
                         '<td>-</td><td></td></tr><tr><td>ARMAT M41A Pulse Rifle</td><td>4 Magazines</td><td>2</td><td></td></tr><tr><td>PN 30MM Grenade Launcher</td><td>1 Magazine</td><td>4</td><td></td>' +
                         '</tr><tr><td>Grenades</td><td>8</td><td>8</td><td>Kills creatures equal to attack roll</td></tr>');
                     $('#tblLoadoutProtection > tbody').html('<tr><td>M3 Personal Armor</td><td>3</td><td>+1 atk, 1 use per roll 1</td></tr ><tr><td>M10 Ballistic Helmet</td><td>1</td><td>absorbs 1 damage then broken</td></tr>');
+                    $('#tblLoadoutKit > tbody').html('<tr><td> Personal First Aid Kit</td><td>1</td><td>Webbing</td><td>Allows corpsman to use</td></tr ><tr><td>TNR Shoulder Lamp</td><td></td>' +
+                        '<td>Armor</td><td>Allows seeing in dark</td></tr><tr><td>M94 Marking Flares</td><td>5</td><td>Pack</td><td>counts as ligth for 1 marine for 1 turn</td></tr><tr><td>Rations</td>' +
+                        '<td>3</td><td>Pack</td><td></td></tr><tr><td>Canteen</td><td>2</td><td>Pack</td><td>Counts as a ration</td></tr><tr><td>Dust Goggles & Respirator</td><td></td><td>Webbing</td>' +
+                        '<td>Filters air - protects against harsh chemicals/atmosphere</td></tr>');
                     break;
                 case 'Smartgunner':
                     life = 7 + rank;
@@ -261,9 +265,13 @@
                     $('#tblLoadoutArmament > tbody').html('<tr><td>M4A3 Pistol</td><td>5 Magazines</td><td>1</td><td></td></tr><tr><td>M24 Tactical Knife</td><td>-</td>' +
                         '<td>-</td><td></td></tr><tr><td>M56A2 Smartgun</td><td>1 Magazine</td><td>4</td><td>+2 atk</td></tr><tr><td>Grenades</td><td>8</td><td>8</td><td>Kills creatures equal to attack roll</td></tr>');
                     $('#tblLoadoutProtection > tbody').html('<tr><td>M2 Flak Vest</td><td>3</td><td>+1 def, 1 use per roll 1</td></tr ><tr><td>M56A2 Armored Breastplate</td><td>1</td><td>absorbs 1 damage then broken</td></tr>');
+                    $('#tblLoadoutKit > tbody').html('<tr><td> Personal First Aid Kit</td><td>1</td><td>Webbing</td><td>Allows corpsman to use</td></tr ><tr><td>TNR Shoulder Lamp</td><td></td>' +
+                        '<td>Armor</td><td>Allows seeing in dark</td></tr><tr><td>M94 Marking Flares</td><td>5</td><td>Pack</td><td>counts as ligth for 1 marine for 1 turn</td></tr><tr><td>Rations</td>' +
+                        '<td>3</td><td>Pack</td><td></td></tr><tr><td>Canteen</td><td>2</td><td>Pack</td><td>Counts as a ration</td></tr><tr><td>Dust Goggles & Respirator</td><td></td><td>Webbing</td>' +
+                        '<td>Filters air - protects against harsh chemicals/atmosphere</td></tr>');
                     break;
                 case 'Com-Tech':
-                    lif = 4 + rank;
+                    life = 4 + rank;
                     $('#classTraits').html('All COM-TECH characters add half their level to their attack rolls. They are proficient with all infantry weaponry.They may wear armor and helmets.They are also' +
                         'proficient at <strong>operating electronics</strong>, radio communications, modifying electronics as well as  <strong>computer diagnostics</strong>, coding, and bypassing security systems.<br/>' +
                         'HIT POINTS: 4(+ Character Level).');
@@ -272,6 +280,12 @@
                         '<td>-</td><td></td></tr><tr><td>ARMAT M41A Pulse Rifle</td><td>4 Magazines</td><td>2</td><td></td></tr><tr><td>PN 30MM Grenade Launcher</td><td>1 Magazine</td><td>4</td><td></td>' +
                         '</tr><tr><td>Grenades</td><td>8</td><td>8</td><td>Kills creatures equal to attack roll</td></tr>');
                     $('#tblLoadoutProtection > tbody').html('<tr><td>M3 Personal Armor</td><td>3</td><td>+1 def, 1 use per roll 1</td></tr ><tr><td>M10 Ballistic Helmet</td><td>1</td><td>absorbs 1 damage then broken</td></tr>');
+                    $('#tblLoadoutKit > tbody').html('<tr><td> Personal First Aid Kit</td><td>1</td><td>Webbing</td><td>Allows corpsman to use</td></tr ><tr><td>TNR Shoulder Lamp</td><td></td>' +
+                        '<td>Armor</td><td>Allows seeing in dark</td></tr><tr><td>M94 Marking Flares</td><td>5</td><td>Pack</td><td>counts as ligth for 1 marine for 1 turn</td></tr>' +
+                        '<tr><td>M1000 Smoke Grenades</td><td>2</td><td>Webbing</td><td>+1 to def rolls</td></tr><tr><td>Rations</td>' +
+                        '<td>3</td><td>Pack</td><td></td></tr><tr><td>Canteen</td><td>2</td><td>Pack</td><td>Counts as a ration</td></tr><tr><td>Respirator</td><td></td><td>Webbing</td>' +
+                        '<td>Filters air - protects against harsh chemicals/atmosphere</td></tr><tr><td>(tech)Motion Tracker</td><td></td><td>Webbing</td><td>Tracks motion; can tell if activity in nearby room</td></tr>' +
+                        '<tr><td>');
                     break;
                 case 'Corpsman':
                     life = 4 + rank;
@@ -296,6 +310,7 @@
                     $('#tblLoadoutArmament > tbody').html('<tr><td>VP - 70 Pistol & Holster</td><td>4 Magazines</td><td>2</td><td>-1 atk</td></tr ><tr><td>M24 Tactical Knife</td><td>-</td>' +
                         '<td>-</td><td></td></tr><tr><td>ARMAT M42A Scope Rifle</td><td>4 Magazines</td><td>2</td><td></td></tr><tr><td>PN 30MM Grenade Launcher</td><td>1 Magazine</td><td>4</td><td></td>' +
                         '</tr><tr><td>Grenades</td><td>8</td><td>8</td><td>Kills creatures equal to attack roll</td></tr>');
+                    $('#tblLoadoutProtection > tbody').html('<tr><td>M3 Personal Armor</td><td>3</td><td>+1 def, 1 use per roll 1</td></tr ><tr><td>M10 Ballistic Helmet</td><td>1</td><td>absorbs 1 damage then broken</td></tr>');
                     break;
                 case 'Squad Leader':
                     life = 4 + rank;
@@ -308,6 +323,7 @@
                     $('#tblLoadoutArmament > tbody').html('<tr><td>VP - 70 Pistol & Holster</td><td>4 Magazines</td><td>2</td><td>-1 atk</td></tr ><tr><td>M24 Tactical Knife</td><td>-</td>' +
                         '<td>-</td><td></td></tr><tr><td>ARMAT M42A Scope Rifle</td><td>4 Magazines</td><td>2</td><td></td></tr><tr><td>PN 30MM Grenade Launcher</td><td>1 Magazine</td><td>4</td><td></td>' +
                         '</tr><tr><td>Grenades</td><td>8</td><td>8</td><td>Kills creatures equal to attack roll</td></tr>');
+                    $('#tblLoadoutProtection > tbody').html('<tr><td>M3 Personal Armor</td><td>3</td><td>+1 def, 1 use per roll 1</td></tr ><tr><td>M10 Ballistic Helmet</td><td>1</td><td>absorbs 1 damage then broken</td></tr>');
                     break;
             }
 
