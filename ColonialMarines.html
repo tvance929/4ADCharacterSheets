@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="print"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -28,11 +30,11 @@
     <div class="container panel panel-default">
         <h2>4AD CM</h2>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-xs-6">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" placeholder="enter name" name="name">
             </div>
-            <div class="col-sm-6">
+            <div class="col-xs-6">
                 <label for="sel1">Class:</label>
                 <select class="form-control" id="class">
                     <option>Rifleman</option>
@@ -46,7 +48,7 @@
 
         </div>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-xs-6">
                 <label for="rank">Rank:</label>
                 <select class="form-control" id="rank">
                     <option value="1">1 - Private 1st Class</option>
@@ -56,37 +58,37 @@
                     <option value="5">5 - Staff Sergeant</option>
                 </select>
             </div>
-            <div class="col-sm-6">
+            <div class="col-xs-6">
                 <label for="name">Life:</label>
                 <input type="life" class="form-control" id="life" placeholder="max" name="life">
                 <input type="life" class="form-control" id="lifeRemaining" placeholder="remaining" name="life">
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-xs-4">
                 <label for="attack">Attack Roll:</label>
                 <input type="text" class="form-control" id="attack" placeholder="attack roll" name="attack">
             </div>
-            <div class="col-sm-3">
+            <div class="col-xs-4">
                 <label for="defense">Defense Roll:</label>
                 <input type="text" class="form-control" id="defense" placeholder="defense roll" name="defense">
             </div>
-            <div class="col-sm-3">
+            <div class="col-xs-4">
                 <label for="stress">Stress:</label>
                 <input type="text" class="form-control" id="stress" placeholder="stress" name="stress">
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-3">
+            <div class="col-xs-3">
                 <label for="personalItem">Personal Item:</label>
                 <input type="text" class="form-control" id="personalItem" placeholder="personal Item"
                     name="personalItem">
             </div>
-            <div class="col-sm-3" id="divSpecialAbility">
+            <div class="col-xs-3" id="divSpecialAbility">
                 <label for="specialAbility" id="lblSpecialAbility">Leadership Points:</label>
                 <input type="text" class="form-control" id="specialAbility" name="specialAbility">
             </div>
-            <div class="col-sm-6">
+            <div class="col-xs-6">
                 <label>XP Test Notes:</label>
                 <input type="text" class="form-control" id="" placeholder="">
             </div>
@@ -105,7 +107,7 @@
 
         <div class="row  panel panel-default">
             <h3>Loadout:</h3>
-            <div id="loadout col-sm-12">
+            <div id="loadout col-xs-12">
                 <table id="tblLoadoutArmament" class="table table-striped">
                     <thead>
                         <tr>
